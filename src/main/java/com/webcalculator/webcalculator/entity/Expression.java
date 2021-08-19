@@ -1,4 +1,4 @@
-package com.webcalculator.webcalculator.controller;
+package com.webcalculator.webcalculator.entity;
 
 import lombok.Getter;
 import lombok.Setter;
