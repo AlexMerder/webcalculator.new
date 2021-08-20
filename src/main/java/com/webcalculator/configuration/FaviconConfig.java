@@ -27,9 +27,6 @@ public class FaviconConfig {
                 myFaviconRequestHandler()));
         return mapping;
     }
-
-
-
     @Bean
     protected ResourceHttpRequestHandler myFaviconRequestHandler()
     {
