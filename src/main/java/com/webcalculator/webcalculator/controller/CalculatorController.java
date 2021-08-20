@@ -26,34 +26,37 @@ public class CalculatorController {
         this.expression = expression;
     }
 
-
     @GetMapping
     public String greetingForm(Model model) {
         model.addAttribute(("expression"), new Expression());
-        return "operation";
+        return "calculator";
     }
 
-    @PostMapping
-    public String greetingSubmit(@ModelAttribute(name = "expression") Expression expression, Map<String, Object> map) {
-
-        System.out.println(expression.getExpr());
-        ScriptEngineManager factory = new ScriptEngineManager();
-        ScriptEngine engine = factory.getEngineByName("JavaScript");
-
-        String result = expression.getExpr();
-
-        try{
-            map.put("answer", engine.eval(result));
-        } catch (ScriptException e){
-            map.put("answer","<mark>"+e.getMessage()+"</mark>");
-        }
-        return "operation";
-    }
     @GetMapping("/home")
     public String homePage() {
         return "home";
     }
+    @GetMapping("/about")
+    public String about() {
+        return "about";
+    }
+    @GetMapping("/features")
+    public String features() {
+        return "features";
+    }
 
+    @PostMapping
+    public String newCalc(@ModelAttribute(name = "expression")Expression expression, Map<String,Object> map){
+        ScriptEngineManager factory =  new ScriptEngineManager();
+        ScriptEngine engine = factory.getEngineByName("JavaScript");
 
+        String expr = expression.getExpr();
 
+        try{
+            map.put("answer", engine.eval(expr));
+        } catch (ScriptException e){
+            map.put("answer","<mark>"+e.getMessage()+"</mark>");
+        }
+        return "calculator";
+    }
 }

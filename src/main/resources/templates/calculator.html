@@ -1,18 +1,19 @@
 <!DOCTYPE HTML>
 <html xmlns:th="http://www.thymeleaf.org" lang="en">
+
 <head>
     <title>Web Calculator</title>
-    <link rel="apple-touch-icon" sizes="180x180" href="/static/favicon/apple-touch-icon.png">
-    <link rel="icon" type="image/png" sizes="32x32" href="/static/favicon/favicon-32x32.png">
-    <link rel="icon" type="image/png" sizes="16x16" href="/static/favicon/favicon-16x16.png">
-    <link rel="manifest" href="/static/favicon/site.webmanifest">
-    <link rel="mask-icon" href="/static/favicon/safari-pinned-tab.svg" color="#5bbad5">
-    <meta name="msapplication-TileColor" content="#b91d47">
-    <meta name="theme-color" content="#ffffff">
-    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
-    <!-- CSS only -->
+    <!-- BOOTSTRAP 5.1 -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/css/bootstrap.min.css" rel="stylesheet"
           integrity="sha384-KyZXEAg3QhqLMpG8r+8fhAXLRk2vvoC2f3B09zVXn8CA5QIVfZOJ3BCsw2P0p/We" crossorigin="anonymous">
+
+    <!-- FAVICON SETTINGS -->
+
+
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <!-- CSS only -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter&display=swap" rel="stylesheet">
@@ -28,8 +29,12 @@
     </style>
 </head>
 <body>
+
 <!-- HEADER -->
-<div th:insert="header::copy"></div>
+<div th:insert="modules/header::copy"></div>
+
+
+<!-- CONTENT -->
 <div class="container">
 
     <form class="form-horizontal" role="form" action="#" th:action="@{/calculator}" th:object="${expression}"
@@ -55,15 +60,12 @@
         <p>Answer:</p>
         <p th:utext="${answer}"></p>
     </div>
-
 </div>
 
 <!-- FOOTER -->
-<div th:insert="footer::copy"></div>
-<!-- JavaScript Bundle with Popper -->
-<script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.3/dist/umd/popper.min.js"
-        integrity="sha384-eMNCOe7tC1doHpGoWe/6oMVemdAVTMs2xqW4mwXrXsW0L84Iytr2wi5v2QjrP/xp"
-        crossorigin="anonymous"></script>
+<div th:insert="modules/footer::copy"></div>
+
+<!-- JavaScript -->
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/js/bootstrap.min.js"
         integrity="sha384-cn7l7gDp0eyniUwwAZgrzD06kc/tftFf19TOAs2zVinnD/C7E91j9yyk5//jjpt/"
         crossorigin="anonymous"></script>
