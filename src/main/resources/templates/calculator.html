@@ -18,6 +18,21 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter&display=swap" rel="stylesheet">
     <style>
+        html {
+            position: relative;
+            min-height: 100%;
+        }
+        body {
+            /* Margin bottom by footer height */
+            margin-bottom: 60px;
+        }
+        footer {
+            position: absolute;
+            bottom: 0;
+            width: 87%;
+            /* Set the fixed height of the footer here */
+            height: 60px;
+        }
         body {
             font-family: 'JetBrains Mono', sans-serif;
         }
@@ -26,6 +41,7 @@
             background-color: #F5e645;
             font-weight: bold;
         }
+
     </style>
 </head>
 <body>
