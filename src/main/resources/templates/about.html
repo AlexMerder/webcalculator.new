@@ -11,9 +11,33 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter&display=swap" rel="stylesheet">
     <style>
+        html {
+            position: relative;
+            min-height: 100%;
+        }
+
+        body {
+            /* Margin bottom by footer height */
+            margin-bottom: 60px;
+        }
+
+        footer {
+            position: absolute;
+            bottom: 0;
+            width: 87%;
+            /* Set the fixed height of the footer here */
+            height: 60px;
+        }
+
         body {
             font-family: 'JetBrains Mono', sans-serif;
         }
+
+        mark {
+            background-color: #F5e645;
+            font-weight: bold;
+        }
+
     </style>
 </head>
 <body>
@@ -21,14 +45,10 @@
 <div th:insert="modules/header::copy"></div>
 
 <!-- CONTENT -->
+
 <div class="container">
-    <div class="jumbotron text-center">
-        <picture>
-            <img src="/static/math.jpg" class="img-thumbnail" alt="math" >
-
-        </picture>
-
-    </div>
+    <img th:src="@{../images/myimage.jpg}" width="300" height="300"
+         alt="Developer"/>
     <h1>About</h1>
     <ol>
         <li><code>WebCalculator.com was created as a new project for learning goals. </code></li>
